@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=San Francisco">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Honk&family=Kode+Mono:wght@400..700&family=Madimi+One&family=Nabla&family=Rock+3D&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://t.ptlsp.com/images/2024/03/15/fitness-tracker.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTLSPTRACKER</title>
+<style>
+    .hidden {
+        display: none;
+    }
+    .hamburger {
+        display: none;
+}
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #ff8080;
+        white-space: nowrap;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'San Francisco', sans-serif;
+    }
+    header {
+        background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://img.ptlsp.com/day);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    ul {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style-type: none;
+        display: flex;
+    }
+
+    ul li {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 20px;
+        border: 1px solid transparent;
+        transition: 0.6s ease;
+        border-radius: 20px;
+    }
+
+    ul li a:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    ul li.active a {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .title h1 {
+        color: #fff;
+        font-size: 88px;
+        font-family: Century Gothic;
+    }
+    
+
+#copy-success {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px; 
+  background-color: #ff8080;
+  color: white;
+  padding: 10px;
+  transition: bottom 0.5s;
+  border-radius: 10px; 
+} 
+    
+    @media (max-width: 888px) {
+        ul {
+            display: flex; /* 在小屏幕上使用flex布局 */
+            flex-direction: column; /* 垂直排列导航项 */
+            align-items: flex-start; /* 让导航项左对齐 */
+        }
+        ul li {
+            margin-left: 0; /* 取消左侧间距 */
+            margin-bottom: 20px; /* 添加下方间距 */
+        }
+         .title h1 {
+         color: #fff;
+         font-size: 55px;
+         font-family: Century Gothic;
+    }
+
+@media (max-width: 888px) {
+.hamburger {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 40px; /* 或其他你设置的大小 */
+    color: white; /* 设置图标颜色为白色 */
+    cursor: pointer;
+}
+    ul {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        width: 80%;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+    }
+    ul.show {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 1;
+    }
+}
+
+#copy-success {
+        display: none;
+} 
+
+</style>
+
+</head>
+<body>
+<header>
+    <div class="main">
+        <ul>
+            <li class="active"><a href="#"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="https://www.ptlsp.com/login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a></li>
+            <li><a href="https://blog.ptlsp.com" target="_blank"><i class="fas fa-blog"></i> BLOG</a></li>
+            <li><a href="https://docs.ptlsp.com" target="_blank"><i class="fas fa-book"></i> DOCS</a></li>
+            <li><a href="https://lsp.ptlsp.com" target="_blank"><i class="fas fa-users"></i> LSPER</a></li>
+            <li><a href="https://status.ptlsp.com" target="_blank"><i class="fas fa-eye"></i> STATUS</a></li>
+            <!-- <li><a href="https://chatgpt.com/" target="_blank"><i class="fas fa-comments"></i> CHATGPT</a></li>-->
+            <!-- <li><a href="https://t.me/" target="_blank"><i class="fab fa-telegram"></i> TELEGRAM</a></li> -->
+            <li class="github-icon"><a href="https://github.com/ptlsp" target="_blank"><i class="fab fa-github"></i> GITHUB</a></li>
+        </ul>
+    </div>
+<div class="title">
+    <a href="https://bt.ptlsp.com/announce" style="text-decoration: none;">
+        <h1 style="text-shadow: 0 0 5px #ff8080, 0 0 10px #ff8080, 0 0 15px #ff8080; font-family: 'Honk', system-ui; font-optical-sizing: auto; font-weight: 400; font-style: normal; font-variation-settings: 'MORF' 15, 'SHLN' 50;">⚡PTLSPTRACKER⚡</h1>
+    </a>
+</div>
+<div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.hamburger');
+        const navUL = document.querySelector('ul');
+
+        hamburger.addEventListener('click', function () {
+            navUL.classList.toggle('show');
+        });
+    });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const title = document.querySelector('.title h1'); // 获取标题元素
+    const copySuccess = document.createElement('div'); // 创建提示元素
+    copySuccess.id = 'copy-success';
+    copySuccess.textContent = '⚡Link copied successfully⚡';
+    document.body.appendChild(copySuccess); // 将提示元素添加到文档中
+
+    title.addEventListener('mouseover', () => { // 监听鼠标移动到标题上的事件
+        navigator.clipboard.writeText('https://bt.ptlsp.com/announce') // 复制链接到剪贴板
+            .then(() => {
+                // 显示复制成功提示
+                copySuccess.style.bottom = '40px'; // 弹出提示
+                setTimeout(() => {
+                    copySuccess.style.bottom = '-100px'; // 3秒后缩回提示
+                }, 3000); // 设置3秒后执行
+            })
+            .catch(err => {
+                console.error('⚡Link replication failed⚡:', err);
+            });
+    });
+});
+</script>
+
+    <footer id="footer" class="footer hidden">
+        <p>Copyright © 2023 - 2024 <a href="https://blog.ptlsp.com/">Lian</a> Inc. All Rights Reserved</p>
+    </footer>
+</header>
+</body>
+</html>
